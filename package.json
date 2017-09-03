@@ -1,0 +1,31 @@
+{
+  "name": "thefeed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "8.4.0",
+    "npm": "5.3.0"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibramos/The-Feed.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibramos/The-Feed/issues"
+  },
+  "homepage": "https://github.com/ibramos/The-Feed#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0"
+  }
+}
