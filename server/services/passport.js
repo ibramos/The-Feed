@@ -39,7 +39,8 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: "/oAuth/google/callback"
+      callbackURL: "/oAuth/google/callback",
+      proxy: true
     },
     /**
      * Callback after Google oAuth confirmation.
