@@ -49,16 +49,11 @@ passport.use(
      * @param {Object} profile - Contains Google account information.
      * @param {Function} done - Used to end function.
      */
-    (accessToken, refreshToken, profile, done) => {
-      User.findOne({ googleID: profile.id }).then(userExists => {
-        if (userExists) {
-          done(null, userExists);
-        } else {
-          new User({ googleID: profile.id })
-            .save()
-            .then(user => done(null, user));
-        }
-      });
+    async (accessToken, refreshToken, profile, done) => {
+      const userExists = await User.findOne({ googleID: profile.id });
+      if (userExists) return done(null, userExists);
+      const user = await new User({ googleID: profile.id }).save();
+      done(null, user);
     }
   )
 );
