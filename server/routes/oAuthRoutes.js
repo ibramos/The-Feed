@@ -5,15 +5,22 @@ module.exports = app => {
   app.get(
     "/oAuth/google",
     passport.authenticate("google", {
-      scope: ["profile", "email"]
+      scope: ["profile", "email"],
+      prompt : "select_account"
     })
   );
 
-  app.get("/oAuth/google/callback", passport.authenticate("google"));
+  app.get(
+    "/oAuth/google/callback",
+    passport.authenticate("google"),
+    (req, res) => {
+      res.redirect("/surveys");
+    }
+  );
 
   app.get("/api/logoutUser", (req, res) => {
     req.logout();
-    res.send(req.user);
+    res.redirect("/");
   });
 
   app.get("/api/currentUser", (req, res) => {
