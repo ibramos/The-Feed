@@ -5,14 +5,14 @@ const requireSignIn = require("../middlewares/requireSignIn");
 module.exports = app => {
   app.post("/api/payment", requireSignIn, async (req, res) => {
     const charge = await stripe.charges.create({
-      amount: 100,
+      amount: 500,
       currency: "usd",
-      description: "$1 to purchase 1 credit",
+      description: "$5 to purchase 10 credits",
       source: req.body.id
     });
 
     //if cookie is available, passport will assign the user the specific user model from MongoDB
-    req.user.credits += 1;
+    req.user.credits += 10;
 
     //assigned to a variable to ensure the most updated version
     const user = await req.user.save();
