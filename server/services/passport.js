@@ -50,6 +50,10 @@ passport.use(
      * @param {Function} done - Used to end function.
      */
     async (accessToken, refreshToken, profile, done) => {
+      //to add:
+      //profile.photos[0].value => image
+      //profile.displayName => name of user account
+      //profile.name.givenName => first name
       const userExists = await User.findOne({ googleID: profile.id });
       if (userExists) return done(null, userExists);
       const user = await new User({ googleID: profile.id }).save();

@@ -8,6 +8,7 @@ import reduxThunk from "redux-thunk";
 import App from "./components/App";
 import reducers from "./reducers/combine";
 
+//remove later - usage to test out survey routes
 import axios from 'axios'
 window.axios = axios
 
