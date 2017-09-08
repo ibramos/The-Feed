@@ -35,6 +35,7 @@
     "localtunnel": "^1.8.3",
     "lodash": "^4.17.4",
     "mongoose": "^4.11.10",
+    "nodemon": "^1.12.0",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
     "path-parser": "^2.0.2",
