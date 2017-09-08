@@ -1,5 +1,7 @@
 # The Feed
-Gather information with ease!
+Feedback is vital in creating and retaining customers. This application provides users with the ability to mass deploy surveys through emailing. The information obtained can then be used to analyze and reassess current situations to improve and grow.
+
+![Image of The Feed Example](https://github.com/ibramos/The-Feed/blob/master/pictures/TheFeed.png)
 
 ## Set Up
 1. Run npm install
