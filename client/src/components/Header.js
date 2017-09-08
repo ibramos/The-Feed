@@ -19,7 +19,9 @@ class Header extends Component {
           <li key="1">
             <Payment />
           </li>,
-          <li key="3" style={{margin: '0 10px'}}>Credits: {this.props.oAuth.credits}</li>,
+          <li key="3" style={{ margin: "0 10px" }}>
+            Credits: {this.props.oAuth.credits}
+          </li>,
           <li key="2">
             <a href="/api/logoutUser">Logout</a>
           </li>
@@ -33,7 +35,8 @@ class Header extends Component {
         <div className="nav-wrapper">
           <Link
             to={this.props.oAuth ? "/surveys" : "/"}
-            className="left brand-logo"
+            className="left brand-logo "
+            style={{ paddingLeft: "15px" }}
           >
             The Feed
           </Link>
