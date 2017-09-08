@@ -17,6 +17,8 @@ npm run dev
 ## Payment Feature
 Test out using 4242 4242 4242 4242 as credit card number information. Other payment fields can be fabricated.
 
+ ![Image of Payment Feature](https://github.com/ibramos/The-Feed/blob/master/pictures/PaymentFeature.png)
+
 ## Other Notes
 Deployed heroku version currently does not have webhook features. 
 
