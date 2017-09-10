@@ -1,4 +1,6 @@
 const express = require("express");
+const morgan = require("morgan");
+const winston = require('winston');
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
@@ -12,6 +14,34 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 
+const logger = new winston.Logger({
+  transports: [
+      new winston.transports.File({
+          level: 'info',
+          filename: 'thefeed.log',
+          handleExceptions: true,
+          json: true,
+          maxsize: 5242880, //5MB
+          maxFiles: 5,
+          colorize: false
+      }),
+      new winston.transports.Console({
+          level: 'debug',
+          handleExceptions: true,
+          json: false,
+          colorize: true
+      })
+  ],
+  exitOnError: false
+})
+
+logger.stream = {
+  write: function(message, encoding){
+      logger.info(message);
+  }
+};
+
+app.use(require("morgan")("combined", { "stream": logger.stream }));
 app.use(bodyParser.json());
 app.use(
   cookieSession({

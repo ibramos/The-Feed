@@ -35,12 +35,14 @@
     "localtunnel": "^1.8.3",
     "lodash": "^4.17.4",
     "mongoose": "^4.11.10",
+    "morgan": "^1.8.2",
     "nodemon": "^1.12.0",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
     "path-parser": "^2.0.2",
     "sendgrid": "^5.2.3",
-    "stripe": "^4.25.0"
+    "stripe": "^4.25.0",
+    "winston": "^2.3.1"
   },
   "devDependencies": {
     "forever": "^0.15.3"
